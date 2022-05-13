@@ -6,6 +6,7 @@ UDPClient2::UDPClient2(QWidget *parent)
     , ui(new Ui::UDPClient2)
 {
     ui->setupUi(this);
+    Timers.Timer(ui->lineEdit_3,1000); // обновление времени через 1 сек
     updSocket = new QUdpSocket(this);
     updSocket->bind(QHostAddress::LocalHost,8081);
     connect(updSocket,SIGNAL(readyRead()),this,SLOT(ReadingData()));
