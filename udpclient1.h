@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QUdpSocket>
 #include <QTime>
+#include "CurrentTime.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class UDPClient1; }
@@ -17,6 +18,7 @@ public:
     UDPClient1(QWidget *parent = nullptr);
     ~UDPClient1();
 
+
 public slots:
     void ReadingData(); //чтение данных
 
@@ -28,5 +30,8 @@ private slots:
 private:
     Ui::UDPClient1 *ui;
     QUdpSocket *updSocket;
+    CurrentTime Timers;
+
+
 };
 #endif // UDPCLIENT1_H
